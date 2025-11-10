@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Calendar } from 'lucide-react';
+import { MapPin, Mail, Calendar } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -8,7 +8,7 @@ const ContactSection = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto mb-10 max-w-2xl text-center">
           <h2 className="text-3xl font-bold text-blue-900 md:text-4xl">Let’s build the future of hospital automation together.</h2>
-          <p className="mt-3 text-blue-800/80">Currently operational in Bengaluru with Tier 2 hospitals — expanding to Tier 1 hospitals.</p>
+          <p className="mt-3 text-blue-800/80">Currently operational in Bengaluru and Hyderabad — expanding to Tier 1 hospitals.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -28,6 +28,10 @@ const ContactSection = () => {
               <div className="flex items-center gap-3 text-blue-900">
                 <MapPin className="h-5 w-5 text-[#0066FF]" />
                 <span>Bengaluru, Karnataka</span>
+              </div>
+              <div className="flex items-center gap-3 text-blue-900">
+                <MapPin className="h-5 w-5 text-[#0066FF]" />
+                <span>Hyderabad, Telangana</span>
               </div>
             </div>
 
@@ -70,9 +74,9 @@ const ContactSection = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-50 via-white to-blue-100" />
             <div className="relative p-6">
-              <div className="mb-4 flex items-center gap-2 text-blue-900">
-                <MapPin className="h-5 w-5 text-[#0066FF]" />
-                <span className="font-medium">Bengaluru, Karnataka</span>
+              <div className="mb-4 flex flex-wrap items-center gap-4 text-blue-900">
+                <div className="flex items-center gap-2"><MapPin className="h-5 w-5 text-[#0066FF]" /><span className="font-medium">Bengaluru, Karnataka</span></div>
+                <div className="flex items-center gap-2"><MapPin className="h-5 w-5 text-[#0066FF]" /><span className="font-medium">Hyderabad, Telangana</span></div>
               </div>
               <div className="aspect-video w-full overflow-hidden rounded-xl border border-blue-100 bg-white">
                 <svg className="h-full w-full" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
@@ -89,9 +93,15 @@ const ContactSection = () => {
                   {Array.from({ length: 7 }).map((_, i) => (
                     <line key={`h-${i}`} x1="0" y1={i * 50} x2="600" y2={i * 50} stroke="#e6eeff" strokeWidth="1" />
                   ))}
+                  {/* Bengaluru marker */}
                   <circle cx="380" cy="220" r="18" fill="#0066FF" opacity="0.9" />
                   <text x="405" y="225" fontSize="12" fill="#1e3a8a">Bengaluru</text>
-                  <path d="M140 90 C 220 100, 300 160, 380 220" stroke="#0066FF" strokeWidth="2" fill="none" />
+                  {/* Hyderabad marker (approx position) */}
+                  <circle cx="420" cy="250" r="14" fill="#3b82f6" opacity="0.9" />
+                  <text x="440" y="255" fontSize="12" fill="#1e3a8a">Hyderabad</text>
+                  {/* connecting lines */}
+                  <path d="M140 90 C 220 110, 300 170, 380 220" stroke="#0066FF" strokeWidth="2" fill="none" />
+                  <path d="M100 140 C 200 170, 300 210, 420 250" stroke="#3b82f6" strokeWidth="2" fill="none" />
                 </svg>
               </div>
             </div>
